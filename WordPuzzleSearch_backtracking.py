@@ -1,3 +1,4 @@
+import time
 class searching:
     def __init__(self):
         self.R = None
@@ -9,6 +10,7 @@ class searching:
     def searchingWord(self, grid, row, col, word):
         if grid[row][col] != word[0]:
             return False
+
         print("------------\n"+"huruf",
               word[0], "ketemu di posisi :", row, col)
 
@@ -40,8 +42,10 @@ class searching:
 
 # Driver Code
 if __name__ == '__main__':
-    grid = ["KDSZWKGZWKD",
-            "ADIFLDOWIDK",
-            "FAIZADAWOAK",
-            "FWAOADAWODF"]
+    start_time = time.time()
+    grid = ["ZZNK",
+            "ZIAF",
+            "AAAW",
+            "DFIF"]
     searching().pattern(grid, 'FAIZ')
+    print("--- %s seconds ---" % (time.time() - start_time))

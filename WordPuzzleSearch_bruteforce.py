@@ -22,13 +22,13 @@ class bruteforce:
     def verticalUp(self,grid, col, row, hasilGrid):
         concateGrid = grid[col][row]
         hasilGrid["arrayHasil"].append(concateGrid)
-        hasilGrid["posisi"].append(f"{col},{row}")
+        hasilGrid["posisi"].append(f"{(len(grid[0])-1)-col},{row}")
         hasilGrid["jenis"].append("Vertical Up")
         col -= 1
         while col >= 0:
             concateGrid = concateGrid + grid[col][row]
             hasilGrid["arrayHasil"].append(concateGrid)
-            hasilGrid["posisi"].append(f"{col},{row}")
+            hasilGrid["posisi"].append(f"{(len(grid[0])-1)-col},{row}")
             hasilGrid["jenis"].append("Vertical Up")
             col -= 1
         return hasilGrid
@@ -50,13 +50,13 @@ class bruteforce:
     def horizontalLeft(self, grid, col, row, hasilGrid):
         concateGrid = grid[col][row]
         hasilGrid["arrayHasil"].append(concateGrid)
-        hasilGrid["posisi"].append(f"{col},{row}")
+        hasilGrid["posisi"].append(f"{col},{(len(grid)-1)-row}")
         hasilGrid["jenis"].append("Horizontal Left")
         row -= 1
         while row >= 0:
             concateGrid = concateGrid + grid[col][row]
             hasilGrid["arrayHasil"].append(concateGrid)
-            hasilGrid["posisi"].append(f"{col},{row}")
+            hasilGrid["posisi"].append(f"{col},{(len(grid)-1)-row}")
             hasilGrid["jenis"].append("Horizontal Left")
             row -= 1
         return hasilGrid
@@ -80,14 +80,14 @@ class bruteforce:
     def diagonalRightUp(self, grid, col, row, hasilGrid):
         concateGrid = grid[col][row]
         hasilGrid["arrayHasil"].append(concateGrid)
-        hasilGrid["posisi"].append(f"{col},{row}")
+        hasilGrid["posisi"].append(f"{(len(grid[0])-1)-col},{row}")
         hasilGrid["jenis"].append("Diagonal Right Up")
         row += 1
         col -= 1
         while row <= (len(grid)-1) and col >= 0:
             concateGrid = concateGrid + grid[col][row]
             hasilGrid["arrayHasil"].append(concateGrid)
-            hasilGrid["posisi"].append(f"{col},{row}")
+            hasilGrid["posisi"].append(f"{(len(grid[0])-1)-col},{row}")
             hasilGrid["jenis"].append("Diagonal Right Up")
             row += 1
             col -= 1
@@ -96,14 +96,14 @@ class bruteforce:
     def diagonalLeftDown(self, grid, col, row, hasilGrid):
         concateGrid = grid[col][row]
         hasilGrid["arrayHasil"].append(concateGrid)
-        hasilGrid["posisi"].append(f"{col},{row}")
+        hasilGrid["posisi"].append(f"{col},{(len(grid)-1)-row}")
         hasilGrid["jenis"].append("Diagonal Left Down")
         row -= 1
         col += 1
         while row >= 0 and col <= (len(grid[0])-1):
             concateGrid = concateGrid + grid[col][row]
             hasilGrid["arrayHasil"].append(concateGrid)
-            hasilGrid["posisi"].append(f"{col},{row}")
+            hasilGrid["posisi"].append(f"{col},{(len(grid)-1)-row}")
             hasilGrid["jenis"].append("Diagonal Left Down")
             row -= 1
             col += 1
@@ -112,14 +112,15 @@ class bruteforce:
     def diagonalLeftUp(self, grid, col, row, hasilGrid):
         concateGrid = grid[col][row]
         hasilGrid["arrayHasil"].append(concateGrid)
-        hasilGrid["posisi"].append(f"{col},{row}")
+        hasilGrid["posisi"].append(f"{(len(grid[0])-1)-col},{(len(grid)-1)-row}")
         hasilGrid["jenis"].append("Diagonal Left Up")
         row -= 1
         col -= 1
         while row >= 0 and col >= 0:
             concateGrid = concateGrid + grid[col][row]
             hasilGrid["arrayHasil"].append(concateGrid)
-            hasilGrid["posisi"].append(f"{col},{row}")
+            hasilGrid["posisi"].append(
+                f"{(len(grid[0])-1)-col},{(len(grid)-1)-row}")
             hasilGrid["jenis"].append("Diagonal Left Up")
             row -= 1
             col -= 1

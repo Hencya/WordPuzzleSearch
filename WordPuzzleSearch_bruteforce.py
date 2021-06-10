@@ -143,6 +143,7 @@ class bruteforce:
 def searchingWord(hasilGrid):
     hasilSearching = {"posisi": [], "arrayHasil": [], "jenis": []}
     found = False
+    print()
     cari = input("Masukan kata yang ingin dicari :")
     for i in range(len(hasilGrid["arrayHasil"])):
         if cari.upper() == hasilGrid["arrayHasil"][i]:
@@ -154,7 +155,6 @@ def searchingWord(hasilGrid):
         print("-----------------------")
         print("KATA YANG ANDA CARI ADA")
         print("-----------------------")
-        print()
         print(f'Kata yang anda cari adalah   : {cari.upper()}')
         print(f'Ketemu di posisi             : {hasilSearching["posisi"]}')
         print(f'Dengan arah ketemunya adalah : {hasilSearching["jenis"]}')
@@ -165,16 +165,68 @@ def searchingWord(hasilGrid):
 
 
 if __name__ == '__main__':
+    #test 1
     start_time = time.time()
-    grid1 = [["Z", "Z", "N", "Z"],
-            ["Z", "I", "I", "F"],
-            ["A", "A", "A", "W"],
-            ["F", "F", "I", "F"]
-            ]
-    
+    grid1 = ["OKO",
+            "WEK",
+            "CAC"]
     array1 = bruteforce().initArray(grid1)
     searchingWord(array1)
-    print("Running Time                 : %s seconds" % (time.time() - start_time))
+    print("Running Time grid1           : %s seconds" % (time.time() - start_time))
+
+    #test 2
+    start_time = time.time()
+    grid2 = ["OKOD",
+             "WEQK",
+             "CACD",
+             "SPSA"]
+    array1 = bruteforce().initArray(grid2)
+    searchingWord(array1)
+    print("Running Time grid2           : %s seconds" %
+          (time.time() - start_time))
+
+    #test3
+    start_time = time.time()
+    grid3 = ["OKODS",
+            "WEQSK",
+            "CACDD",
+            "ODSWE",
+            "SPSAJ"]
+    array1 = bruteforce().initArray(grid3)
+    searchingWord(array1)
+    print("Running Time grid3           : %s seconds" %
+          (time.time() - start_time))  
+
+    #test4
+    start_time = time.time()
+    grid4 = ["OKODSWEQSK",
+             "WEQSKCACDD",
+             "CACDDOKODS",
+             "OKODSWEQSK",
+             "WEQSKCACDD",
+             "SPSAJODSWE",
+             "DSWEQQSKCA",
+             "DDOKOOKODS",
+             "ODSWEQSKCA",
+             "OKODSWEQSK"]
+    array1 = bruteforce().initArray(grid4)
+    searchingWord(array1)
+    print("Running Time grid4           : %s seconds" %
+          (time.time() - start_time))
+
+    #test5
+    start_time = time.time()
+    grid5 = ["ODOEQS",
+             "WEQSAC",
+             "CDDODS",
+             "OKEQSK",
+             "WEQCAC",
+             "ODSQSK",
+             ]
+    array1 = bruteforce().initArray(grid5)
+    searchingWord(array1)
+    print("Running Time grid5           : %s seconds" %
+          (time.time() - start_time))
 
 
 

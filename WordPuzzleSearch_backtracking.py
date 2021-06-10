@@ -42,10 +42,73 @@ class searching:
 
 # Driver Code
 if __name__ == '__main__':
+    #test1
+    print("---------------------------------------------")
     start_time = time.time()
-    grid = ["ZZNK",
-            "ZIAF",
-            "AAAW",
-            "DFIF"]
-    searching().pattern(grid, 'FAIZ')
-    print("--- %s seconds ---" % (time.time() - start_time))
+    grid1 = ["OKO",
+             "WEK",
+             "CAC"]
+    searching().pattern(grid1, 'CEO')
+    print("Running Time grid1           : %s seconds" %
+          (time.time() - start_time))
+    print("---------------------------------------------")
+
+    #test2
+    print("---------------------------------------------")
+    start_time = time.time()
+    grid2 = ["OKOD",
+             "WEQK",
+             "CACD",
+             "SPSA"]
+    searching().pattern(grid2, 'CEO')
+    print("Running Time grid2           : %s seconds" %
+          (time.time() - start_time))
+    print("---------------------------------------------")
+
+    #test3
+    print("---------------------------------------------")
+    start_time = time.time()
+    grid3 = ["OKODS",
+             "WEQSK",
+             "CACDD",
+             "ODSWE",
+             "SPSAJ"]
+    searching().pattern(grid3, 'CEO')
+    print("Running Time grid3           : %s seconds" %
+          (time.time() - start_time))
+    print("---------------------------------------------")
+
+    #test4
+    start_time = time.time()
+    grid4 = ["OKODSWEQSK",
+             "WEQSKCACDD",
+             "CACDDOKODS",
+             "OKODSWEQSK",
+             "WEQSKCACDD",
+             "SPSAJODSWE",
+             "DSWEQQSKCA",
+             "DDOKOOKODS",
+             "ODSWEQSKCA",
+             "OKODSWEQSK"]
+    searching().pattern(grid4, 'CEO')
+    print("Running Time grid4           : %s seconds" %
+          (time.time() - start_time))
+    print("---------------------------------------------")
+
+    print("---------------------------------------------")
+    #test5
+    start_time = time.time()
+    grid5 = ["ODOEQS",
+             "WEQSAC",
+             "CDDODS",
+             "OKEQSK",
+             "WEQCAC",
+             "ODSQSK",
+             ]
+    searching().pattern(grid5, 'CEO')
+    print("Running Time grid5           : %s seconds" %
+          (time.time() - start_time))
+    print("---------------------------------------------")
+
+
+
